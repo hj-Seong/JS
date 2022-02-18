@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //if-else if 조건문
+        // 성적이 주어지면 등급을 출력
+        // 100~90 이면 A / 89~80 B / 79~70 C / 그 외에 F
+
+
+        let score =99;
+        if (score >= 90) {
+            document.write("<p>A</p>");
+        }
+        else if (score >= 80) {
+            document.write("<p>B</p>");
+        }
+        else if (score >= 70) {
+            document.write("<p>C</p>");
+        }
+        else {
+            document.write("<p>F</p>");
+        }
+
+
+        //if else if 조건문
+        // 좋음 0~30 / 보통 31~80 / 나쁨 81~150 / 매우나쁨 151~
+        let dust = 170;
+
+        if (dust <= 30) {
+            document.write("<p>좋음</p>");
+        } 
+        else if (dust <= 80) {
+            document.write("<p>보통</p>");
+        }
+        else if ( dust <=150) {
+            document.write("<p>나쁨</p>");
+        } 
+        else  {
+            document.write("<p>매우 나쁨</p>");
+        }
+
+    </script>
+</body>
+</html>

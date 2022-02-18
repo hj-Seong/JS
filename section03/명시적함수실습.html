@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Print(text) {
+            document.write(`<h3>${text}</h3>`);
+        }
+        //두개의 인수를 받아와서 두수의 곱을 return하는 함수
+        function Multi(a, b) {
+            let num = a*b;
+            return num;
+        }
+        //배열이 들어오면 배열 안에 있는 값을 출력하는 함수
+        function Show(array) {
+            for (i of array) {
+                document.write(`${i}. `);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+    <script>
+        Print(123); //숫자값
+        Print("문자"); //문자값
+        let word = "변수에 들어간 문자";
+        Print(word);
+    </script>
+</body>
+</html>

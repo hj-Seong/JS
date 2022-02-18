@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 배열안에 있는 점수를 받아와서 평균 구하기
+        let scoreArray = [60, 70, 80, 90, 40, 70, 70];
+
+        let scoreSum = 0;
+        for (let score of scoreArray) {
+            scoreSum += score;
+        }
+        document.write(`<p>${scoreSum/scoreArray.length}</p>`);
+
+        // 1~100까지의 수 중 홀수만 더한 값을 출력
+        let oddSum = 0;
+        for ( let i= 0 ; i<=100 ; i++ ) {
+            if ( i%2 == 1 ) {
+                // document.write(i);
+                oddSum += i;
+            }
+        }
+        document.write(`<p>1~100까지 홀수들의 합 : ${oddSum}</p>`);
+
+        // 1~100까지 3의 배수와 5의 배수의 합을 출력
+
+        let sum3_5 =0;
+        for ( let i=0 ; i<=100 ; i++) {
+            //3의 배수와 5의 배수 출력
+            if ( (i%3 == 0) || (i%5 ==0) ) {
+                //document.write(i);
+                sum3_5 += i;
+            }
+        }
+        document.write(`<p>3의배수와 5의 배수의 합: ${sum3_5}</p>`);
+
+    </script>
+
+</body>
+</html>
