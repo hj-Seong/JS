@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 선언적 (명시적) 함수
+        function functionNameAnother() { // 매개변수X
+            document.write("홍길동입니다"); // 함수내용 출력
+        } //return 할당하지않고 함수 선언 끝
+
+        // 동일한 이름의 함수, 매개변수가 1개  > 호출X
+        function introName(name) {
+            document.write(`<p>안녕하세요. ${name}입니다. 반갑습니다.</p>`);
+        }
+        // 동일한 이름의 함수, 매개변수의 개수가 2개 > 호출O
+        function introName(name, address) {
+            document.write(`<p>안녕하세요. ${name}입니다. ${address}에 거주중입니다</p>`);
+        }
+
+        function introNameReturn (name) { // 매개변수 1개
+            return `<p>안녕하세요 ${name} 입니다</p>`;  //return 값이 있는 함수 
+        }
+
+        function introNameReturnLog (name) { //매개변수 1개
+            console.log("함수가 출력되었습니다"); //함수내용
+            return `<p>안녕하세요 ${name} 입니다</p>`; //return값이 있는 함수
+        }
+
+        function area(num1, num2){ // 매개변수 2개
+            let result = num1*num2; // 함수 내용 (코드)
+            return result; //return값이 있는 함수
+        }
+
+        function avrg(array) { // 매개변수 1개 - 배열
+            let avrgNum=0;
+            let sumNum=0;
+            for ( num of array) { 
+                sumNum+= num; //배열안의 모든 값 더함
+            }
+            avrgNum = sumNum/(array.length); 
+            return avrgNum; 
+        }
+
+        function add(num1, num2=0) { //매개변수 2개, num2는 기본값 
+            if (num1 === undefined) {
+                num1 = 0;
+            }
+            return num1+num2;
+        }
+
+        function numPrint(a, ...b) { //매개변수 2개, b는 나머지 매개변수(배열로)
+            document.write("<p>"+a+"</p>");
+            document.write("<p>"+b[0]+"</p>"); //배열의 인덱스로 접근가능
+        }
+        function numArgu(a) { //매개변수 1개
+            document.write("<p>"+a+"</p>");
+            document.write("<p>"+arguments[1]+"</p>"); 
+            //arguments는 모든 인수를 참조하여 값을 들고온다 
+        }
+
+        function addAll() {
+            let sum = 0;
+            for ( num of arguments) {
+                sum += num;
+            }
+            return sum;
+        }
+    </script>
+</head>
+<body>
+    
+    <script>
+        // 매개변수와 리턴값이 있는 함수의 형태
+        // 선언적 (명시적) 함수
+        function functionName(name) { // 매개변수 name, 값을 받아올 수 있다
+            document.write(name); // html에 출력하는 코드
+            return name+"입니다"; // name입니다를 반환, 
+            // 모든 함수는 리턴값을 갖는다. 할당되지않은 경우 undefined
+        } // 함수 선언 끝
+
+        //함수 호출
+        functionName("홍길동1");
+
+        function intro() {
+            document.write("안녕하세요. 반갑습니다");
+        }
+        intro();
+
+        functionNameAnother();
+        introName("홍길동2");
+        document.write(introNameReturn("홍길동3"));
+        document.write(introNameReturnLog("홍길동4"));
+        document.write(area(5,10));
+
+        let numArray = [30, 60, 40, 60, 20];
+        document.write("<br>");
+        document.write(avrg(numArray));
+
+        document.write("<br>");
+        document.write(add(5));
+
+        numPrint(1,2,3,4,5);
+        document.write(addAll(5));
+    </script>
+</body>
+</html>
