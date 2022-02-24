@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //생성자 함수를 이용한 객체 생성
+        // Dog - 속성 : name, age, 메소드 : intro {age살입니다 return}
+        function Dog(name, age) { // 값이 들어가는 생성자함수 틀!
+            this.name = name;
+            this.age = age;
+            this.intro = function() {
+                return this.age+"살입니다";
+            };
+        }
+        let myDog = new Dog("초코", 1);
+
+        function Student(name, score) { // 붕어빵 기계(틀)
+            this.name = name;
+            this.score = score;
+            this.study = function() {
+                this.score += 10; 
+            };
+            this.showScore = function() {
+                return this.score;
+            }
+        }
+        let myStudent = new Student("홍길동",70); // 객체생성 붕어빵 (값을 가짐)
+        let yourStudent = new Student("성춘향",80); 
+
+        function BusCard( money ) {
+            this.money = money;
+            this.charge = function ( plusMoney ) {
+                this.money += plusMoney;
+            };
+            this.takeBus = function () {
+                if (this.money < 1500) {
+                    return "잔액이 부족합니다";
+                } else {
+                    return this.money -= 1500;
+                }
+            };
+            this.showMoney = function () {
+                return this.money;
+            }
+        }
+        
+        let myBusCard = new BusCard(1500);
+        let yourBusCard = new BusCard(1000);
+        
+        function Messege (name, content="") {
+            this.name = name;
+            this.content = content;
+            this.time = new Date();
+            this.modifyMessege = function(messege) {
+                this.content = messege;
+            };
+
+            this.showMessege = function () {
+                return this.name+"님께서"+this.content+"을"+this.time+"에 보냈습니다";
+            };
+        }
+        let myMessege = new Messege("홍길동","반갑습니다","0224");
+        let yourMessege = new Messege("성춘향","안녕하세요","0224");
+        
+        for (let x in yourMessege){
+            console.log(x+": "+yourMessege[x]); //yourMessege["name"]
+        }
+        let string ="";
+        for (let x in myBusCard) {
+            string = string + x +":" +myBusCard[x]+". ";
+        }
+        console.log(string);
+
+        let memo = {
+            title : "오늘할일", // title 속성에 문자열 값
+            todo : { // todo 속성에 객체 값
+            //todo 객체는 3개의 배열을 가짐
+                mornig : ["청소", "준비"], 
+                afternoon : ["수업"],
+                evening : ["정리", "독서"]
+            }
+        };
+
+
+        //동물병원의 진료차트
+        // 생성자 함수 : AnimalChart(name, kind, age)
+        // 속성 : name, kind, age, sickness, condition
+        // 메소드 : receive function(sickness,condition)
+        //          confirm function()
+        function AnimalChart(name, kind, age) {
+            this.name = name;
+            this.kind = kind;
+            this.age = age;
+            this.sickness = "";
+            this.condition = "";
+            this.receive = function (sickness,condition) {
+                this.sickness = sickness;
+                this.condition = condition;
+            };
+            this.confirm = function () {
+                for ( let x in this) { // this는 생성된 객체를 의미한다.
+                    // console.log(typeof x);
+                    // console.log(typeof this[x]);
+                    if(  !( x == "receive" || x == "confirm" ) ) {
+                        // receive와 confirm이 아닐때
+                        console.log(this[x]);
+                    }
+                }
+            };
+        }
+
+
+    </script>
+</body>
+</html>
