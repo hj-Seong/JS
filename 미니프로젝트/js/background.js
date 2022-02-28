@@ -8,5 +8,6 @@ const choseImage = images[ Math.floor(Math.random()*images.length)];
 const bodyBackground = document.querySelector("body");
 
 // CSS style을 이용해서 bodyBackground에 추가
-bodyBackground.style.background = `url(./img/${choseImage})`;//이미지 파일이름 추가
+bodyBackground.style.background = `url(./img/${choseImage}) no-repeat fixed`;//이미지 파일이름 추가
 // stlyle = " background: url="./img/0.jpg"; "
+
