@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //10과 20중 큰 수를 출력하는 조건문
+        let num1 = 10;
+        let num2 = 20;
+        if (num1 > num2) {
+            document.write("<p>"+num1+"</p>");
+        }
+        else {
+            document.write("<p>"+num2+"</p>");
+        }
+
+        let score = 65;
+        if (score >= 70) {
+            document.write("<p>합격</p>");
+        }
+        else if (score >= 60) {
+            document.write("<p>보충수업</p>");
+        }
+        else {
+            document.write("<p>재수강</p>");
+        }
+
+        let initNum = 1;
+        while (initNum <= 10) {
+            document.write("<p>"+initNum+"</p>");
+            initNum++;
+        }
+
+        for ( let i=10; i>0 ; i--) {
+            document.write("<p>"+i+"</p>");
+        }
+
+        let numArray = [1,2,3,4];
+        for ( num of numArray ) {
+            document.write("<p>"+num+"</p>");
+        }
+
+        let flowerArray = ["해바라기","튤립","장미"];
+        for ( i in flowerArray ) {
+            document.write("<p>"+flowerArray[i]+"</p>");
+        }
+
+        let countNum = 1;
+        while (true) {
+            document.write("<p>"+countNum+"</p>"); //1 출력~~> 100 출력
+            if ( countNum == 100) { // 위치에 따라 조건이 달라질수있다.
+                break;
+            } 
+            
+            countNum++;  //2 값을 1더함 ~~> 101
+            if ( countNum == 101) {
+                break;
+            } 
+        }
+
+        for (let i=1 ; i<=50 ; i++) {
+            if (i%3==0) {
+                continue;
+            } 
+            document.write("<p>"+i+"</p>");
+        }
+
+        document.write("<h1> 실습문제 </h1>");
+        let h = 15;
+        let w = 2;
+        document.write("<p> 둘레 : "+(h+w)*2+"</p>");
+        document.write("<p> 넓이 : "+h*w+"</p>");
+
+        let mint = 40;
+        let result = mint*60;
+        document.write("<p>"+result+"</p>");
+
+        let a = 10;
+        let b = 20; // 가장 긴 한 변의 길이로 넣으세요.
+        let c = 12;
+
+        // 삼각형이 될수있는지
+        if( b < a+c ) {
+            document.write("<p>삼각형이 될 수 있다</p>");
+            if ( b*b == (a*a +c*c) ) {
+                document.write("<p>직각삼각형이다</p>");
+            } 
+            else if ( b*b < a*a + c*c  ) {
+                document.write("<p>예각삼각형이다</p>");
+            }
+            else {
+                document.write("<p>둔각삼각형이다</p>");
+            } 
+        }
+        else {
+            document.write("<p> 삼각형이 될 수 없다</p>");
+        }
+
+        //BMI지수
+        let height = 170;
+        let weight = 66;
+        let bmi = weight / ( (height/100)*(height/100) );
+        document.write("<p>"+bmi+"</p>");
+
+        if (bmi < 18.5) {
+            document.write("<p>저체중</p>");
+        }
+        else if (bmi < 23) {
+            document.write("<p>정상</p>");
+        }
+        else if (bmi < 25) {
+            document.write("<p>과체중</p>");
+        }
+        else if (bmi < 30) {
+            document.write("<p>비만</p>");
+        }
+        else {
+            document.write("<p>고도비만</p>");
+        }
+
+        let age = 20;
+        let d = "2구간";
+
+        if( age >= 19 ) {
+            if (d == "1구간") {
+                document.write("<p>1300</p>");
+            }
+            else {
+                document.write("<p>1500</p>");
+            }
+        }
+        else if( age >=13) {
+            if (d == "1구간") {
+                document.write("<p>1050</p>");
+            }
+            else {
+                document.write("<p>1200</p>");
+            }
+        }
+        else if (age >= 6) {
+            if (d == "1구간") {
+                document.write("<p>650</p>");
+            }
+            else {
+                document.write("<p>750</p>");
+            }
+        }
+
+        let credit = 140;
+        let grade = 3.5;
+
+        if ( credit>=140 && grade>=3.0 ) {
+            document.write("<p>졸업이 가능합니다</p>");
+        }
+        else {
+            document.write("<p>졸업이 힘듭니다!</p>");
+        }
+
+        let days = "월"; 
+        // 1.월 2.화 3.수 4.목 5.금  6.토 7.일
+        switch (days) {
+            case "월":
+            case "수":
+            case "금":
+            case "일":
+                document.write("<p>oh my god</p>");
+                break;
+            case "화":
+            case "목":
+            case "토":
+                document.write("<p>enjoy</p>");
+                break;
+            default :
+                document.write("<p>그런요일은 없습니다</p>");
+        }
+
+        let startNum = 8;
+        let endNum = 100;
+        for (let i = startNum ; i<= endNum; i++) {
+            if (i%2 == 1) {
+                document.write("<p>"+i+"</p>");
+            } 
+        }
+
+        let startNum1 = 30;
+        let sum = 0;
+        for ( let i = startNum1 ; i >0 ; i--) {
+            document.write("<p>"+i+"</p>");
+            sum += i;
+        }
+        document.write("<p>합 : "+ sum+"</p>");
+
+        let startNum2 =5;
+        let fac = 1;
+        for ( let i = startNum2 ; i>0; i-- ) {
+            fac *= i;
+        }
+        document.write("<p>팩토리얼 : "+fac+"</p>");
+
+        let n = 4; //가로 세로 길이
+        let allNum = 1; // 1~ 길이의 제곱까지 1씩 증가할 수
+
+        for (let i = 0 ; i <n; i++) {
+            for (let j = 0; j < n ; j++) {
+                document.write(allNum+" ");
+                allNum++;
+            }
+            document.write("<br>");
+        }
+
+        for (let i =1 ; i <= n*n ; i++ ) {
+            document.write(i+" ");
+            if (i % n ==0) {
+                document.write("<br>");
+            } 
+        }
+
+        document.write("<h1>조건문과 반복문 혼합</h1>");
+        let sum2 = 0;
+        for (let i = 1; i<=20 ; i++) {
+            if ( !(i%2 ==0 || i%3==0) ) {
+                sum2 += i;
+            }
+            /*
+            if ( i%2 ==0 || i%3==0 ) {
+                continue;
+            }
+            sum2 += i;
+            */
+        }
+        document.write("<p>"+sum2+"</p>");
+
+        let num3 = 6;
+        for (let i=1 ; i <= num3 ; i++) {
+            if ( num3 % i == 0 ) {
+                document.write(i+" "); 
+            }
+        }
+
+        for (let i =1 ; i <=6 ; i++) {// 하나의 주사위(1~6)
+            for (let j=1 ; j <= 6 ; j++) {  //다른 하나의 주사위(1~6)
+                if(6 == i+j) { // 두 눈의 합이 6이 될때
+                    document.write(i+","+j+" ");
+                }
+            }
+        }
+        document.write("<br>");
+        for(let i=0 ;i<5 ;i++ ) {
+            for (let j=0; j<5 ;j++) {
+                if (i >= j) {
+                    document.write("* ");
+                }
+            }
+            document.write("<br>");
+        }
+        
+        let group =["A", "B", "C", "D", "E"]; // 조 배열 생성
+
+        for( g of group ) {
+            document.write(g+" ");
+            for (let i = 0; i<6; i++) {
+                let randomNum = Math.random()*45+1; //1.xx~45.xx 실수값
+                randomNum = parseInt(randomNum); //1~45
+                document.write(randomNum+". "); // `` 백틱에 넣어서 표현식 사용가능
+            }
+            document.write("<br>");
+        } 
+
+
+        
+    </script>
+</body>
+</html>
