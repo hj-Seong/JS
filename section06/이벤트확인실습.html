@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>값을 넣어주세요</p>
+    <form action="">
+        <input id="text_value" type="text" value=""
+            onfocus="backgroundColorChange1(event)" onblur="backgroundColorChange2()">
+        <input type="button" value="확인" onclick="textInput()">
+    </form>
+    <p id="result"></p>
+
+    <p id="hidden_text">눌러주세요</p>
+
+    <ol>
+        <li id="first_list">
+            <input type="checkbox" name="" id="checkbox">
+            첫번째 리스트입니다.</li>
+    </ol>
+
+    <script>
+        const checkbox = document.querySelector("#checkbox");
+        checkbox.addEventListener("click", check);
+        function check(e) {
+            const li = document.querySelector("#first_list")
+            const checkEvent = e.target;
+            if (checkEvent.checked == true ) {
+                //li 객체의 스타일 lightgray
+                li.style.color = "lightgray";
+            }
+            else {
+                li.style.color = "black";
+            }
+        }
+
+        function textInput() {
+            const textValue = document.querySelector("#text_value");
+            textValue.style.color= "blue";
+            document.querySelector("#result").textContent = textValue.value;
+        }
+        function backgroundColorChange1 (event) { //e, event
+            const textInput = event.target;
+            // 이벤트 객체를 들고 와서 이벤트가 실행되는 요소(태그)를 가져올수있다.
+            // const textInput = document.querySelector("#text_value");
+            textInput.style.backgroundColor = "gray";
+        }
+        function backgroundColorChange2 () {
+            const textInput = document.querySelector("#text_value");
+            textInput.style.backgroundColor = "white";
+        }
+
+        const hiddenText = document.querySelector("#hidden_text");
+        hiddenText.addEventListener("click", showText);
+
+        function showText(e){
+            const text = e.target;
+            if (text.textContent == "숨겨진 단어입니다") {
+                text.textContent = "눌러주세요";
+                text.style.color= "black";
+            }
+            else{
+                text.textContent = "숨겨진 단어입니다";
+                text.style.color= "red";
+            }
+
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() { 
+            // window객체가 load가 되면 아래 내용 실행.
+            const p =document.querySelector("p");
+            p.textContent = "수정했습니다";
+        }
+    </script>
+</head>
+<body>
+    <p onclick="alert('문자열을 클릭했어요')">단락입니다</p>
+    <p id="color" onmouseover="color(event)" onmouseleave="color2()">마우스를 올리면 색이 바뀝니다</p>
+
+    <h1>제목입니다</h1>
+    <input type="text" id="title" 
+    onfocus="focusIn()" onblur="focusOut()" onchange="backgroundColorChange()">
+
+
+
+    <script>
+        // 이벤트리스너를 사용할 때 DOM객체를 먼저 불러와서 사용 
+        const h1 = document.querySelector("h1");
+        h1.addEventListener("click",color);
+        h1.addEventListener("dblclick",color2);
+
+        function color(event) {
+            console.log(event.target)
+            const p = document.querySelector("#color");
+            p.style.color = "red";
+        }
+        function color2() {
+            const p = document.querySelector("#color");
+            p.style.color = "black";
+        }
+
+        function focusIn() {
+            const input = document.querySelector("#title");
+            input.style.color = "red";
+        }
+        function focusOut() {
+            const input = document.querySelector("#title");
+            input.style.color = "black";
+        }
+
+        function backgroundColorChange() {
+            const input = document.querySelector("#title");
+            input.style.backgroundColor = "pink";
+        }
+    </script>
+</body>
+</html>
