@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header id="header">
+        <h1>수정하기 전 제목입니다</h1>
+    </header>
+    <aside id="menu">
+        <ul class="column">
+            <li class="column1">첫번째 내용입니다</li>
+            <li class="column2">두번째 내용입니다</li>
+            <li class="column3">세번째 내용입니다</li>
+            <li class="column4">네번째 내용입니다</li>
+        </ul>
+    </aside>
+    <div class="content">
+        <section class="content-list">
+            <article class="content-body">
+                <ol class="column">
+                    <li class="column1">첫번째 내용입니다</li>
+                    <li class="column2">두번째 내용입니다</li>
+                    <li class="column3">세번째 내용입니다</li>
+                    <li class="column4">네번째 내용입니다</li>
+                </ol>
+            </article>
+        </section>
+        <section class="content-note">
+            <article class="content-body">
+                <p><span class="text-stytle">빈 공간</span>입니다</p>
+            </article>
+        </section>
+    </div>
+
+    <footer>
+        <p>푸터영역입니다</p>
+    </footer>
+
+    <script>
+        let h1 = document.querySelector("#header h1")
+        h1.style.color = "blue"
+        h1.style.backgroundColor="lightgray"
+        h1.textContent = "DOM 이용한 수정"
+
+        let ul = document.querySelector("ul");
+        ul.removeChild(ul.childNodes[1])
+
+        let li = document.createElement("li")
+        li.textContent = "새로추가한 노드요소입니다"
+        ul.appendChild(li)
+
+        let ol = document.querySelector(".content-body .column")
+        ol.removeChild(ol.firstElementChild)
+        ol.removeChild(ol.lastElementChild)
+
+        let chageli = document.createElement("li")
+        chageli.textContent = "내용을 바꾸었습니다"
+        ol.replaceChild(chageli, ol.firstElementChild);
+        document.querySelector(".text-stytle").style.color = "red"
+        
+        let p = document.querySelector(".content-body p")
+        document.querySelector(".content-body").appendChild(p.cloneNode(true))
+        document.querySelector(".content-body").appendChild(p.cloneNode(true))
+    </script>
+</body>
+</html>
