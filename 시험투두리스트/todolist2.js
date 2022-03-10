@@ -6,6 +6,7 @@ const todoInput = document.querySelector("#todo_input");
 // 이벤트리스너를 통해 이벤트 발생
 // submit 이벤트는 Form에서 발생하는 이벤트 
 todoForm.addEventListener("submit", todoFormSubmit);
+todoForm.addEventListener("submit", countTodo2);
 
 //버튼이 눌렀을때 todoFormSubmit 함수
 function todoFormSubmit(e){
@@ -85,17 +86,17 @@ function countTodo () {
     for (let i=0; i < checkboxul.childNodes.length ; i++) {
         // 0~ i-1 인덱스값을 갖는 li의 checkbox
         let check =  checkboxul.childNodes[i].firstElementChild 
-        if (check.checked ) {
+        if ( !check.checked ) {
             count++;
         }
     }
     document.querySelector("#score").textContent = count;
-
 }
 
 function countTodo2 () {
     let count =0;
+    const liAll = document.querySelectorAll("#todo_board ul li");
     const checked = document.querySelectorAll("#todo_board ul li input:checked");
-    count = checked.length;
+    count = liAll.length - checked.length;
     document.querySelector("#score").textContent = count;
 }
