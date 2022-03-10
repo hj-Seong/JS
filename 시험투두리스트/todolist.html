@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>투두리스트</h1>
+    <h3>완료한 할일 > 남은 할일로 수정</h3>
+    <h3>JQuery로 바꿔보기</h3>
+    <h3>$(this) > e.target을 들고오는 것과 동일</h3>
+
+    <!-- 투두 입력폼 -->
+    <form id="todo_form"> 
+        <input type="text" id="todo_input">
+        <input type="submit" value="+" id="todo_submit"> 
+    </form>
+
+    <!-- 투두 내용 출력 -->
+    <div id="todo_board">
+        <ul></ul>
+    </div>
+
+    <!-- 완료한 할일 출력 -->
+    <p>오늘 완료한 할일 : <span id="score">0</span>개</p>
+
+    <script src="./todolist2.js"></script>
+</body>
+</html>
